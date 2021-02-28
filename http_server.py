@@ -94,7 +94,7 @@ def response_path(path: str):
         mime_type = b'text/plain'
         content = ', '.join(os.listdir(local_path))
         content = content.encode()
-    else:
+    else:   # assume is a file
         import mimetypes
         mime_type = mimetypes.guess_type(local_path)[0].encode()
         if b'text' in mime_type:
